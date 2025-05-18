@@ -1,4 +1,3 @@
-```txt
 streamlit
 ultralytics
 opencv-python
