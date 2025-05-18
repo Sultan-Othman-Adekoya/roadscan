@@ -21,7 +21,7 @@ if uploaded_file:
 
     with st.spinner("Running detection..."):
         model = load_model()
-        results = model.predict(image, conf=0.1)
+        results = model.predict(image, conf=0.5)
 
     # Display annotated image
     boxes = results[0].boxes
