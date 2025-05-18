@@ -1,4 +1,5 @@
+```txt
 streamlit
 ultralytics
-Pillow
 opencv-python
+Pillow
