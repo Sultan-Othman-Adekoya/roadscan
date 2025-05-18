@@ -2,4 +2,3 @@ streamlit
 ultralytics
 Pillow
 opencv-python
-```txt
