@@ -7,7 +7,7 @@ import os
 # Load the model once with caching
 @st.cache_resource
 def load_model():
-    model = YOLO('https://hub.ultralytics.com/models/9ExafekBT5o47OLbCIgq')  # Replace with your model if needed
+    model = YOLO('https://hub.ultralytics.com/models/TWjHdy37TfqAGDRojKUi')  # Replace with your model if needed
     return model
 
 st.set_page_config(page_title="RoadScan AI", layout="centered")
