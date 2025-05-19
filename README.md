@@ -38,4 +38,4 @@ roadscan/
 
 ## 🚀 Deployment
 
-You can deploy this app on [Streamlit Cloud](https://streamlit.io/cloud) by pushing it to GitHub with the correct structure and config.
+You can deploy this app on [Streamlit Cloud](https://streamlit.io/cloud) 
