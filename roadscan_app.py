@@ -10,7 +10,7 @@ import os
 # Load YOLO model
 @st.cache_resource
 def load_model():
-    return YOLO("https://github.com/Sultan-Othman-Adekoya/roadscan/blob/main/model_-%2017%20may%202025%207_46.pt") 
+    return YOLO("model_- 17 may 2025 7_46.pt") 
 
 model = load_model()
 
