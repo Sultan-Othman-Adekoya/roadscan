@@ -1,4 +1,3 @@
-
 import streamlit as st
 from PIL import Image, ExifTags
 from ultralytics import YOLO
@@ -6,6 +5,8 @@ import cv2
 import numpy as np
 import tempfile
 import os
+
+st.set_page_config(page_title="Road Defect Detection", layout="centered")
 
 # Load YOLO model
 @st.cache_resource
@@ -49,7 +50,6 @@ def get_exif_location(img_pil):
 def gps_to_google_maps_url(lat, lon):
     return f"https://www.google.com/maps?q={lat},{lon}"
 
-st.set_page_config(page_title="Road Defect Detection", layout="centered")
 st.title("🚧 Road Defect Detection System")
 
 option = st.radio("Select input method", ["Upload Image", "Use Webcam"])
