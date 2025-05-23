@@ -1,4 +1,7 @@
 streamlit
-ultralytics
-opencv-python-headless
+opencv-python
+numpy
+pandas
 Pillow
+fpdf
+face_recognition
