@@ -26,7 +26,7 @@ def load_model():
         st.write(f"Model file size (bytes): {os.path.getsize(model_path)}")
     else:
         st.error(f"Model file '{model_path}' not found!")
-    return YOLO(model_path)
+    return YOLO(best.pt)
 
     
 model = load_model()
