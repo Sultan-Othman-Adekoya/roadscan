@@ -146,7 +146,7 @@ if page == "Upload & Detect":
                 # Get class name
                 
             try:
-                name = model.names[cls_int]
+                name = model.model.names[cls_int]
             except (AttributeError, IndexError, TypeError):
                 name = f"class_{cls_int}"
 
