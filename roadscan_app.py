@@ -20,7 +20,7 @@ os.makedirs("logs", exist_ok=True)
 @st.cache_resource
 
 def load_model():
-    return YOLO("best.pt")
+    return YOLO("yolov8_compatible.pt")
     
 model = load_model()
 
