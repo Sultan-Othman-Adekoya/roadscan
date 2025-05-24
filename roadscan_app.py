@@ -171,11 +171,20 @@ elif page == "Detection Logs":
         min_date = max_date = None
 
     date_range = st.date_input(
-        "Filter by Date Range",
-        value=(min_date, max_date) if min_date and max_date else None,
-        min_value=min_date,
-        max_value=max_date,
-    )
+    "Filter by Date Range",
+    value=(min_date, max_date) if min_date and max_date else (),
+    min_value=min_date,
+    max_value=max_date,
+)
+
+# Safely handle empty or invalid date range
+if isinstance(date_range, (list, tuple)) and len(date_range) == 2:
+    start_date, end_date = pd.to_datetime(date_range[0]), pd.to_datetime(date_range[1])
+    filtered_df = filtered_df[
+        (pd.to_datetime(filtered_df["Timestamp"]) >= start_date)
+        & (pd.to_datetime(filtered_df["Timestamp"]) <= end_date + pd.Timedelta(days=1))
+    ]
+
 
     filtered_df = logs_df.copy()
     if filter_name:
