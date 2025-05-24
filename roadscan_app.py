@@ -142,18 +142,12 @@ if page == "Upload & Detect":
                 x1, y1, x2, y2, conf, cls = det
                 # Ensure cls is scalar
                 cls_int = int(cls.item()) if hasattr(cls, 'item') else int(cls)
-
                 # Get class name
-                
                 class_names = getattr(model.model, "names", None)
-
             if  class_names and cls_int < len(class_names):
                 name = class_names[cls_int]
             else:
                 name = f"class_{cls_int}"
-
-
-
                 confidence = float(conf * 100)
                 results_to_log.append({"name": name, "confidence": confidence})
 
