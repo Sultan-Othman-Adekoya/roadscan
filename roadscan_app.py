@@ -144,7 +144,12 @@ if page == "Upload & Detect":
                 cls_int = int(cls.item()) if hasattr(cls, 'item') else int(cls)
 
                 # Get class name
-                name = model.model.names[cls_int]
+                
+            try:
+                name = model.names[cls_int]
+            except (AttributeError, IndexError, TypeError):
+                name = f"class_{cls_int}"
+
 
                 confidence = float(conf * 100)
                 results_to_log.append({"name": name, "confidence": confidence})
