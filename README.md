@@ -1,8 +1,25 @@
-# RoadScan 🚧
+# RoadScan 
 
-A Streamlit web app for detecting road defects using a YOLO-based computer vision model.
+A computer vision-powered web application that detects road defects (e.g., potholes, cracks) from images or webcam input. The system uses a YOLOv8 model to identify road issues and log detections with optional GPS data from image EXIF metadata. Built using Streamlit, OpenCV, and PyTorch.
 
-## 🔧 Setup
+
+# Features
+
+-  Upload or capture images using webcam
+-  Detect road defects using a YOLOv8 model
+-  Extract GPS coordinates from image EXIF metadata
+-  Generate clickable Google Maps links for GPS-tagged images
+-  View detection logs with filters for date and defect type
+-  Generate downloadable PDF reports from logs
+-  Lightweight, runs on local machine or cloud
+
+
+# Requirements
+- Python 3.10+
+- pip
+
+
+# Setup
 
 1. Clone the repo:
    ```bash
@@ -18,11 +35,9 @@ A Streamlit web app for detecting road defects using a YOLO-based computer visio
 3. Run the app:
    ```bash
    streamlit run roadscan_app.py
-   ```
 
-## 📁 Folder Structure
+# Folder Structure
 
-```
 roadscan/
 ├── models/
 │   └── roadscan_model.pt
@@ -34,8 +49,3 @@ roadscan/
 ├── .streamlit/
 │   └── config.toml
 └── README.md
-```
-
-## 🚀 Deployment
-
-You can deploy this app on [Streamlit Cloud](https://streamlit.io/cloud) 
