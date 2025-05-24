@@ -138,18 +138,21 @@ if page == "Upload & Detect":
 
             # Parse detections into list of dicts for logging
             results_to_log = []
-            for det in detection_results[0].boxes.data.cpu().numpy():
-                x1, y1, x2, y2, conf, cls = det
-                # Ensure cls is scalar
-                cls_int = int(cls.item()) if hasattr(cls, 'item') else int(cls)
-                # Get class name
-                class_names = getattr(model.model, "names", None)
-            if  class_names and cls_int < len(class_names):
-                name = class_names[cls_int]
+            class_names = getattr(model.model, "names", None)
+
+            boxes_data = detection_results[0].boxes.data.cpu().numpy()
+            if boxes_data.size == 0:  # No detections
+                st.warning("No defects detected.")
             else:
-                name = f"class_{cls_int}"
-                confidence = float(conf * 100)
-                results_to_log.append({"name": name, "confidence": confidence})
+                for det in boxes_data:
+                    x1, y1, x2, y2, conf, cls = det
+                    cls_int = int(cls.item()) if hasattr(cls, "item") else int(cls)
+                    if class_names and cls_int < len(class_names):
+                       name = class_names[cls_int]
+                    else:
+                       name = f"class_{cls_int}"
+                    confidence = float(conf * 100)
+                    results_to_log.append({"name": name, "confidence": confidence})
 
             # Show annotated image
             annotated_img = detection_results[0].plot()
