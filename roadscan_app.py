@@ -141,7 +141,7 @@ if page == "Upload & Detect":
             for det in detection_results[0].boxes.data.cpu().numpy():
                 x1, y1, x2, y2, conf, cls = det
                 # Ensure cls is scalar
-               cls_int = int(cls.item()) if hasattr(cls, 'item') else int(cls)
+                cls_int = int(cls.item()) if hasattr(cls, 'item') else int(cls)
 
                 # Get class name
                 name = model.model.names[cls_int]
