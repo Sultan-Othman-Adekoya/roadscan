@@ -140,7 +140,12 @@ if page == "Upload & Detect":
             results_to_log = []
             for det in detection_results[0].boxes.data.cpu().numpy():
                 x1, y1, x2, y2, conf, cls = det
-                name = model.names[int(cls)]
+                # Ensure cls is scalar
+               cls_int = int(cls.item()) if hasattr(cls, 'item') else int(cls)
+
+                # Get class name
+                name = model.model.names[cls_int]
+
                 confidence = float(conf * 100)
                 results_to_log.append({"name": name, "confidence": confidence})
 
