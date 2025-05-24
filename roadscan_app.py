@@ -18,7 +18,7 @@ os.makedirs("logs", exist_ok=True)
 # --- Load model ---
 @st.cache_resource
 def load_model():
-    return YOLO("best (1).torchscript")
+    return YOLO("yolov8n.pt")
     
 model = load_model()
 
