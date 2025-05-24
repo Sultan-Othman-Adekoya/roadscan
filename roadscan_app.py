@@ -10,6 +10,7 @@ from datetime import datetime
 from fpdf import FPDF
 
 st.set_page_config(page_title="Road Defect Detection", layout="centered")
+st.cache_resource.clear()
 
 # --- Constants ---
 LOG_FILE = "logs/detection_logs.csv"
