@@ -18,7 +18,7 @@ os.makedirs("logs", exist_ok=True)
 # --- Load model ---
 @st.cache_resource
 def load_model():
-    model_path = "best.pt"  # or the correct relative/absolute path to your model
+    model_path = "best_model_weights.pt"  # or the correct relative/absolute path to your model
     import os
     st.write("Current working directory:", os.getcwd())
     st.write(f"Model file exists at '{model_path}':", os.path.exists(model_path))
@@ -26,7 +26,7 @@ def load_model():
         st.write(f"Model file size (bytes): {os.path.getsize(model_path)}")
     else:
         st.error(f"Model file '{model_path}' not found!")
-    return YOLO("best.pt")
+    return YOLO("best_model_weights.pt")
 
     
 model = load_model()
