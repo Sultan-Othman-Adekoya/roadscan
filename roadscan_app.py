@@ -18,7 +18,7 @@ os.makedirs("logs", exist_ok=True)
 # --- Load model ---
 @st.cache_resource
 def load_model():
-    return YOLO("https://hub.ultralytics.com/models/TWjHdy37TfqAGDRojKUi")
+    return YOLO("model_- 17 may 2025 7_46.pt")
 
 model = load_model()
 
