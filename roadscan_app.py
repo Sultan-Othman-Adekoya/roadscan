@@ -18,7 +18,7 @@ os.makedirs("logs", exist_ok=True)
 # --- Load model ---
 @st.cache_resource
 def load_model():
-    return YOLO("yolo11n.pt")
+    return YOLO("best.pt")
     
 model = load_model()
 
