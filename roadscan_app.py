@@ -19,8 +19,7 @@ os.makedirs("logs", exist_ok=True)
 @st.cache_resource
 def load_model():
     return YOLO("model_- 17 may 2025 7_46.pt")
-
-model = load_model()
+    model = load_model()
 
 # --- EXIF GPS Extraction ---
 def get_exif_location(img_pil):
